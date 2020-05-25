@@ -1,10 +1,16 @@
 var express = require('express')
+var router = express.Router();
 var burger = require('../models/burger')
 
-var PORT = process.env.PORT || 8080;
-
-var app = express();
-
-app.listen(PORT, function () {
-    console.log(`Server listening on: http://localhost: ${PORT}`);
+router.get("/", (req, res) => {
+    burger.selectAll(function(data) {
+        var burgerObject = {
+            burger: data
+        };
+        let newArr = burgerObject.burger.map(arr => console.log(arr[0]))
+        console.log(burgerObject)
+        res.render("index", burgerObject)
+    })
 })
+
+module.exports = router;
