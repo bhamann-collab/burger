@@ -7,10 +7,21 @@ router.get("/", (req, res) => {
         var burgerObject = {
             burger: data
         };
-        let newArr = burgerObject.burger.map(arr => console.log(arr[0]))
         console.log(burgerObject)
         res.render("index", burgerObject)
     })
+})
+
+router.post("/api/burger", (req, res) => {
+    console.log(req.body)
+    burger.insertOne([
+        "name", "devoured"
+    ], [
+        req.body.name, req.body.devoured
+    ], function(result) {
+        
+    })
+
 })
 
 module.exports = router;

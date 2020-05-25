@@ -9,8 +9,10 @@ var orm = {
             cb(result);
         })
     },
-    insertOne: function(burger_name, devoured) {
-        var queryString = `INSERT INTO burgers (burger_name, devoured) VALUES (${burger_name}, ${devoured});`;
+    insertOne: function(data) {
+        console.log(`These are values homies: ${data[0]}`)
+        var queryString = `INSERT INTO burgers (burger_name, devoured) VALUES ('${data[0]}', ${data[1]});`;
+        console.log(queryString)
         connection.query(queryString, [], function(err, result) {
             if (err) throw err;
             console.log(result);

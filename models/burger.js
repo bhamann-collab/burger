@@ -5,6 +5,12 @@ var burger = {
         orm.selectAll("burger", res => {
             cb(res)
         })
+    },
+
+    insertOne: function(cb, values) {
+        orm.insertOne(values, res => {
+            cb(res)
+        })
     }
 
     //To be completed!
