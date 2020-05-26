@@ -19,9 +19,9 @@ router.post("/api/burger", (req, res) => {
     ], [
         req.body.name, req.body.devoured
     ], function(result) {
-        
+        res.json({ id: result.insertId})
     })
-
+    res.redirect('/')
 })
 
 module.exports = router;
