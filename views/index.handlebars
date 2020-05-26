@@ -4,14 +4,14 @@
 {{#each burger}}
     <li>
         {{#with this}}
-            {{burger_name}}
+            <p><b>{{burger_name}}</b>    devoured?: {{devoured}}</p> 
         {{/with}}
     </li>
 {{/each}}
 
 </ul>
 
-<h1 id="great">Add a burger</h1>
+<h1>Add a burger</h1>
 <form class="create-form">
     <div class="form-group">
         <label for="ca">Burger Name:</label>
@@ -25,4 +25,28 @@
     </div>
 
     <button type="submit">Add burger</button>
+</form>
+<h1>Update Burger</h1>
+<form class="update-form">
+    <div class="form-group">
+        <label for="ca">Burger Name:</label>
+        <select id="currentBurger" name="currentName">
+            {{#each burger}}
+                <option value='{{@index}}'>{{burger_name}}</option>
+            {{/each}}
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ca">New Burger Name:</label>
+        <input type="text" id="ca2" name="name">
+    </div>
+
+    <div class="form-group">
+        <label for="devoured">Would you want to eat it?</label><br>
+        <input type="radio" name="devoured" value="1" checked> Yes Sir!<br>
+        <input type="radio" name="devoured" value="0"> No way!
+    </div>
+
+    <button type="submit">Click to update a specific burger</button>
 </form>

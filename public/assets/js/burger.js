@@ -27,5 +27,26 @@ $( document ).ready(function() {
     )
 })
 
-    console.log( "ready!" );
+    $(".update-form").on("submit", function(event) {
+        event.preventDefault();
+
+        let updateBurger = {
+            currentName: $("#currentBurger").val(),
+            name: $("#ca2").val().trim(),
+            devoured: $("[name=devoured]:checked").val().trim()
+        };
+
+        console.log(updateBurger)
+
+        $.ajax("/api/burger-update", {
+            type: "POST",
+            data: updateBurger
+        }).then(
+            function() {
+                console.log("updated burger on the menu")
+                //Reload page
+                location.reload();
+            }
+        )
+    })
 });

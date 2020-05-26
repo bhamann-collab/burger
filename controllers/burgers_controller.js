@@ -24,4 +24,16 @@ router.post("/api/burger", (req, res) => {
     res.redirect('/')
 })
 
+router.post("/api/burger-update", (req, res) => {
+    console.log(req.body)
+    burger.updateOne([
+        "currentName", "name", "devoured"
+    ], [
+        req.body.currentName - (-1), req.body.name, req.body.devoured
+    ], function(result) {
+        res.json({ id: result.insertId})
+    })
+    res.redirect('/')
+})
+
 module.exports = router;

@@ -11,6 +11,12 @@ var burger = {
         orm.insertOne(values, res => {
             cb(res)
         })
+    },
+
+    updateOne: function(cb, values) {
+        orm.updateOne(values, res => {
+            cb(res)
+        })
     }
 
     //To be completed!
