@@ -18,11 +18,6 @@ var burger = {
             cb(res)
         })
     }
-
-    //To be completed!
-    // insertOne: function(cols, )
-    // orm.insertOne("Oyster Bay Burger", "TRUE");
-    // orm.updateOne("3", "Bomb Fire Burger", "TRUE")
 }
 
 

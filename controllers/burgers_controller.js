@@ -7,13 +7,12 @@ router.get("/", (req, res) => {
         var burgerObject = {
             burger: data
         };
-        console.log(burgerObject)
         res.render("index", burgerObject)
     })
 })
 
+//To add a new burger
 router.post("/api/burger", (req, res) => {
-    console.log(req.body)
     burger.insertOne([
         "name", "devoured"
     ], [
@@ -24,8 +23,8 @@ router.post("/api/burger", (req, res) => {
     res.redirect('/')
 })
 
+//To update an existing burger
 router.post("/api/burger-update", (req, res) => {
-    console.log(req.body)
     burger.updateOne([
         "currentName", "name", "devoured"
     ], [
