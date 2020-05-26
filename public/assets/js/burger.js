@@ -33,7 +33,7 @@ $( document ).ready(function() {
         let updateBurger = {
             currentName: $("#currentBurger").val(),
             name: $("#ca2").val().trim(),
-            devoured: $("[name=devoured]:checked").val().trim()
+            devoured: $("[name=devoured2]:checked").val().trim()
         };
 
         console.log(updateBurger)

@@ -1,4 +1,6 @@
 ## Seed
+ALTER TABLE burgers AUTO_INCREMENT = 0;
+
 INSERT INTO burgers (burger_name, devoured)
 VALUES ('The Grand Master', TRUE);
 
